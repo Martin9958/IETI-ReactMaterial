@@ -6,6 +6,9 @@ import {Login} from "./Login";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
 
+localStorage.setItem('username', 'martin9958');
+localStorage.setItem('password', 'M0rtinc0nt8r');
+
 class App extends Component {
       constructor(props) {
             super(props);
@@ -17,7 +20,7 @@ class App extends Component {
                         <Login/>
               );
               const TodoView = () => (
-                <TodoApp/>
+                        <TodoApp/>
               );
 
               return (
