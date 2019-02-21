@@ -44,7 +44,7 @@ class App extends Component {
                 <Grid container spacing={8} >
                     <Grid item xs>
                         <form onSubmit={this.handleSubmit} className="todo-form">
-                            <h2>New Activity TODO</h2>
+                            <h2>New Activity </h2>
                             <br/>
                                 <TextField
                                       id="outlined-name"
