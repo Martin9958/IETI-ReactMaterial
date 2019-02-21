@@ -1,4 +1,9 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
 
 export class Todo extends React.Component {
 
@@ -8,11 +13,21 @@ export class Todo extends React.Component {
 
     render() {
         return (
-            <tr>
-                <td>{this.props.text}</td>
-                <td>{this.props.priority}</td>
-                <td>{this.props.dueDate.format('DD-MM-YYYY')}</td>
-            </tr>
+
+            <CardContent>
+
+                   <Avatar aria-label="Recipe">
+                       TD
+                   </Avatar>
+                   <Typography variant="h6" component="h2">
+                       {this.props.dueDate.format("MMMM d, YYYY ")}
+                   </Typography>
+                   <Typography>
+                       # {this.props.priority}. {this.props.text}
+                   </Typography>
+
+            </CardContent>
+
         );
     }
 

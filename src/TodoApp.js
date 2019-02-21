@@ -31,6 +31,15 @@ class TodoApp extends Component {
                 <br/>
                 <form onSubmit={this.handleSubmit} className="todo-form">
                     <h3>New TODO</h3>
+                     <TextField
+                          id="outlined-name"
+                          label="Text"
+                          value={this.state.text}
+                          onChange={this.handleTextChange}
+                          margin="normal"
+                          variant="outlined"
+                     />
+
                     <label htmlFor="text" className="right-margin">
                         Text:
                     </label>
@@ -63,13 +72,15 @@ class TodoApp extends Component {
                         onChange={this.handleDateChange}>
                     </DatePicker>
                     <br/>
-                    <button>
+                    <Button variant="danger">
                         Add #{this.state.items.length + 1}
-                    </button>
+                    </Button>
                 </form>
                 <br/>
                 <br/>
-                <TodoList todoList={this.state.items}/>
+                <Card>
+                    <TodoList todoList={this.state.items}/>
+                </Card>
             </div>
         );
     }
@@ -112,6 +123,7 @@ class TodoApp extends Component {
             dueDate: ''
         }));
     }
+
 
 }
 
