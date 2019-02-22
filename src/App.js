@@ -6,22 +6,22 @@ import {Login} from "./Login";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
 
-localStorage.setItem('username', 'martin9958');
-localStorage.setItem('password', 'M0rtinc0nt8r');
-
+const LoginView = () => (
+        <Login/>
+);
+const TodoView = () => (
+         <TodoApp/>
+);
 class App extends Component {
       constructor(props) {
             super(props);
+            this.state = {isLoggedIn : localStorage.getItem('isLoggedIn')===null?false : localStorage.getItem('isLoggedIn')};
+            localStorage.setItem('username', 'admin');
+            localStorage.setItem('password', 'admin');
       }
 
 
       render() {
-              const LoginView = () => (
-                        <Login/>
-              );
-              const TodoView = () => (
-                        <TodoApp/>
-              );
 
               return (
                   <Router>
@@ -34,15 +34,10 @@ class App extends Component {
                           <br/>
                           <br/>
 
-                          <ul>
-                              <li><Link to="/">Login</Link></li>
-                              <li><Link to="/todo">Todo</Link></li>
-                          </ul>
-
-                          <div>
-                              <Route exact path="/" component={LoginView}/>
-                              <Route path="/todo" component={TodoView}/>
-                          </div>
+                          {localStorage.getItem('IsLoggedIn')==="true"
+                               ? <li><Link to="/todo">Todo</Link> <Route path="/todo" component={TodoView}/></li>
+                               : <li><Link to="/">Login</Link> <Route exact path="/" component={LoginView}/></li>
+                           }
                       </div>
                   </Router>
               );

@@ -1,8 +1,6 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 
 export class Todo extends React.Component {
@@ -15,7 +13,6 @@ export class Todo extends React.Component {
         return (
 
             <CardContent>
-
                    <Avatar aria-label="Recipe">
                        TD
                    </Avatar>
